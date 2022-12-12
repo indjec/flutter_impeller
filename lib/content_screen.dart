@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:impeller_issues/enums.dart';
-import 'package:impeller_issues/presence_icons.dart';
+import 'package:impeller_issues/app_icons.dart';
 import 'package:lottie/lottie.dart';
 
 class ContentScreen extends StatefulWidget {
@@ -25,6 +25,47 @@ class _ContentScreenState extends State<ContentScreen> {
               Column(
                 children: const [
                   Text(
+                    'Custom Fonts rendering issue:\nSF Pro Text, Poppins, Arial rounded',
+                    style: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  ///[SF Pro]
+                  Text(
+                    "Hello World",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontFamily: 'SF-Pro-Text',
+                    ),
+                  ),
+                  Text(
+                    "Hello World",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'SF-Pro-Text',
+                    ),
+                  ),
+                  Text(
+                    "Hello World",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'SF-Pro-Text',
+                    ),
+                  ),
+                  Text(
+                    "Hello World",
+                    style: TextStyle(
+                      fontFamily: 'SF-Pro-Text',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+
+                  SizedBox(height: 50),
+
+                  ///[Poppins]
+                  Text(
                     "Hello World",
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
@@ -43,6 +84,15 @@ class _ContentScreenState extends State<ContentScreen> {
                     ),
                   ),
                   Text("Hello World"),
+                  SizedBox(height: 50),
+
+                  ///[Arial rounded]
+                  Text(
+                    "Hello World",
+                    style: TextStyle(
+                      fontFamily: 'Arial',
+                    ),
+                  ),
                 ],
               ),
             if (widget.contentType == ContentType.image)
@@ -90,17 +140,17 @@ class _ContentScreenState extends State<ContentScreen> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Icon(
-                      PresenceIcons.navbar_stories_sel,
+                      AppIcons.navbar_stories_sel,
                     ),
                   ),
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Icon(
-                      PresenceIcons.navbar_instant_sel,
+                      AppIcons.navbar_instant_sel,
                     ),
                   ),
-                  buildButton(icon: PresenceIcons.search, onPressed: () {}),
-                  buildButton(icon: PresenceIcons.activity, onPressed: () {})
+                  buildButton(icon: AppIcons.search, onPressed: () {}),
+                  buildButton(icon: AppIcons.activity, onPressed: () {})
                 ],
               ),
             if (widget.contentType == ContentType.separator)
